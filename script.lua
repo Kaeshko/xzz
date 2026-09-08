@@ -180,7 +180,7 @@ local function singleHit()
 			end)
 
 		end
-		task.wait(0.4)
+		task.wait(0.2)
 		tpconnect:Disconnect()
 		iscanbe = true
 	end
