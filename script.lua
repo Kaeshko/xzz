@@ -165,7 +165,7 @@ task.spawn(function()
 end)
 
 local function singleHit()
-	task.wait(0.45)
+	task.wait(0.5)
 	if isAlive(char) and isAlive(target) then
 		iscanbe = false
 		local root = getRoot(char)
@@ -175,7 +175,7 @@ local function singleHit()
 			root.AssemblyLinearVelocity = Vector3.zero
 			root.AssemblyAngularVelocity = Vector3.zero
 		end
-		task.wait(0.05)
+		task.wait(0.02)
 		iscanbe = true
 	end
 end
