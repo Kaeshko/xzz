@@ -3,6 +3,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Workspace = game:GetService("Workspace")
 local tpservice = game:GetService("TeleportService")
 local player = Players.LocalPlayer
+print("starting the script")
 print(tostring(game.PlaceId))
 if game.PlaceId ~= 8023712967 then
 	print("not in game")
