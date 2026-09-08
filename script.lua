@@ -165,7 +165,7 @@ task.spawn(function()
 end)
 
 local function singleHit()
-	task.wait(0.2)
+	task.wait(0.5)
 	if isAlive(char) and isAlive(target) then
 		iscanbe = false
 		local root = getRoot(char)
