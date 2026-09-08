@@ -9,7 +9,7 @@ if game.PlaceId ~= 8023712967 then
 	print("not in game")
 	if game.PlaceId ~= 8008202756 then
 		print("not in lobby")
-		tpservice:Teleport(player, 8008202756)
+		tpservice:Teleport(8008202756, player)
 	else
 		print("in lobby")
 		task.wait(3)
