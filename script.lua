@@ -4,7 +4,9 @@ local Workspace = game:GetService("Workspace")
 local tpservice = game:GetService("TeleportService")
 local player = Players.LocalPlayer
 if game.PlaceId ~= 8023712967 then
+	print("not in game")
 	if game.PlaceId ~= 8008202756 then
+		print("not in lobby")
 		tpservice:Teleport(player, 8008202756)
 	else
 		task.wait(3)
