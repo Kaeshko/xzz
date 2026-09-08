@@ -175,7 +175,7 @@ local function singleHit()
 			root.AssemblyLinearVelocity = Vector3.zero
 			root.AssemblyAngularVelocity = Vector3.zero
 		end
-		task.wait(0.02)
+		task.wait(0.04)
 		iscanbe = true
 	end
 end
