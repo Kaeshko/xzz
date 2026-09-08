@@ -3,12 +3,14 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Workspace = game:GetService("Workspace")
 local tpservice = game:GetService("TeleportService")
 local player = Players.LocalPlayer
+print(tostring(game.PlaceId))
 if game.PlaceId ~= 8023712967 then
 	print("not in game")
 	if game.PlaceId ~= 8008202756 then
 		print("not in lobby")
 		tpservice:Teleport(player, 8008202756)
 	else
+		print("in lobby")
 		task.wait(3)
 		local event = game:GetService("ReplicatedStorage").ReplicatedModules.KnitPackage.Knit.Services.MatchmakingService.RF.MakeMatchmakingTeam
 		event:InvokeServer(
@@ -23,6 +25,7 @@ if game.PlaceId ~= 8023712967 then
 		)
 	end
 else
+	print("in game")
 	task.wait(3)
 
 
