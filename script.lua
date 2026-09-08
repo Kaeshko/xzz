@@ -215,7 +215,7 @@ task.spawn(function()
 				isattacking = true
 				doacombo()
 				isattacking = false
-				task.wait(1.25)
+				task.wait(2)
 			end
 		end
 	end
