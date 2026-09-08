@@ -4,6 +4,7 @@ local Workspace = game:GetService("Workspace")
 local tpservice = game:GetService("TeleportService")
 local player = Players.LocalPlayer
 local vu = game:GetService("VirtualUser")
+local runservice = game:GetService("RunService")
 print("starting the script")
 print(tostring(game.PlaceId))
 if game.PlaceId ~= 8023712967 then
@@ -49,7 +50,7 @@ task.spawn(function()
 	while task.wait(3) do
 		local money = tonumber(game:GetService("Players").LocalPlayer.PlayerGui.UI.Gameplay:GetChildren()[60].Content.UCoins.Content.Text)
 		if money > 3000000 then
-			
+
 			local Event = game:GetService("ReplicatedStorage").ReplicatedModules.KnitPackage.Knit.Services.GameModeService.RF.RemoveAllLives
 			Event:InvokeServer()
 		end
@@ -167,15 +168,20 @@ end)
 local function singleHit()
 	task.wait(0.5)
 	if isAlive(char) and isAlive(target) then
+		local tpconnect = nil
 		iscanbe = false
 		local root = getRoot(char)
 		local targetRoot = getRoot(target)
 		if root and targetRoot then
-			root.CFrame = targetRoot.CFrame * CFrame.new(0, 0, 7)
-			root.AssemblyLinearVelocity = Vector3.zero
-			root.AssemblyAngularVelocity = Vector3.zero
+			tpconnect = runservice.Heartbeat:Connect(function()
+				root.CFrame = targetRoot.CFrame * CFrame.new(0, 0, 5)
+				root.AssemblyLinearVelocity = Vector3.zero
+				root.AssemblyAngularVelocity = Vector3.zero
+			end)
+
 		end
-		task.wait(0.2)
+		task.wait(0.3)
+		tpconnect:Disconnect()
 		iscanbe = true
 	end
 end
@@ -206,7 +212,7 @@ task.spawn(function()
 				isattacking = true
 				doacombo()
 				isattacking = false
-				task.wait(2)
+				task.wait(1.25)
 			end
 		end
 	end
