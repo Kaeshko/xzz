@@ -171,7 +171,7 @@ local function singleHit()
 		local root = getRoot(char)
 		local targetRoot = getRoot(target)
 		if root and targetRoot then
-			root.CFrame = targetRoot.CFrame
+			root.CFrame = targetRoot.CFrame * CFrame.new(0, 0, 5)
 			root.AssemblyLinearVelocity = Vector3.zero
 			root.AssemblyAngularVelocity = Vector3.zero
 		end
