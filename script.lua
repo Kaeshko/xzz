@@ -166,7 +166,7 @@ task.spawn(function()
 end)
 
 local function singleHit()
-	task.wait(0.5)
+	task.wait(0.6)
 	if isAlive(char) and isAlive(target) then
 		local tpconnect = nil
 		iscanbe = false
@@ -174,13 +174,13 @@ local function singleHit()
 		local targetRoot = getRoot(target)
 		if root and targetRoot then
 			tpconnect = runservice.Heartbeat:Connect(function()
-				root.CFrame = targetRoot.CFrame * CFrame.new(0, 0, 5)
+				root.CFrame = targetRoot.CFrame * CFrame.new(0, 0, 8)
 				root.AssemblyLinearVelocity = Vector3.zero
 				root.AssemblyAngularVelocity = Vector3.zero
 			end)
 
 		end
-		task.wait(0.3)
+		task.wait(0.4)
 		tpconnect:Disconnect()
 		iscanbe = true
 	end
