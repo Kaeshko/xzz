@@ -51,7 +51,7 @@ else
 end
 task.spawn(function()
 	while task.wait(3) do
-		local money = tonumber(game:GetService("Players").LocalPlayer.PlayerGui.UI.Gameplay:GetChildren()[60].Content.UCoins.Content.Text)
+		local money = tonumber(game:GetService("Players").LocalPlayer.PlayerGui.UI.Gameplay:GetChildren()[60].Content.UCoins.Content.Value.Text)
 		if money > 3000000 then
 
 			local Event = game:GetService("ReplicatedStorage").ReplicatedModules.KnitPackage.Knit.Services.GameModeService.RF.RemoveAllLives
