@@ -3,6 +3,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Workspace = game:GetService("Workspace")
 local tpservice = game:GetService("TeleportService")
 local player = Players.LocalPlayer
+local vu = game:GetService("VirtualUser")
 print("starting the script")
 print(tostring(game.PlaceId))
 if game.PlaceId ~= 8023712967 then
@@ -44,6 +45,24 @@ else
 		}
 	)
 end
+task.spawn(function()
+	while task.wait(3) do
+		local money = tonumber(game:GetService("Players").LocalPlayer.PlayerGui.UI.Gameplay:GetChildren()[60].Content.UCoins.Content.Text)
+		if money > 3000000 then
+			
+			local Event = game:GetService("ReplicatedStorage").ReplicatedModules.KnitPackage.Knit.Services.GameModeService.RF.RemoveAllLives
+			Event:InvokeServer()
+		end
+	end
+end)
+task.spawn(function()
+	while task.wait(5) do
+		vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+		task.wait(1)
+		vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+		print("clicked idk")
+	end
+end)
 local folder = Workspace:WaitForChild("Living")
 local Event = ReplicatedStorage.ReplicatedModules.KnitPackage.Knit.Services.MoveInputService.RF.FireInput
 local SkipEvent = ReplicatedStorage.ReplicatedModules.KnitPackage.Knit.Services.GameModeService.RE.Signal
