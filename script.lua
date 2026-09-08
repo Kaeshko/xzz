@@ -171,11 +171,11 @@ local function singleHit()
 		local root = getRoot(char)
 		local targetRoot = getRoot(target)
 		if root and targetRoot then
-			root.CFrame = targetRoot.CFrame * CFrame.new(0, 0, 5)
+			root.CFrame = targetRoot.CFrame * CFrame.new(0, 0, 7)
 			root.AssemblyLinearVelocity = Vector3.zero
 			root.AssemblyAngularVelocity = Vector3.zero
 		end
-		task.wait(0.04)
+		task.wait(0.2)
 		iscanbe = true
 	end
 end
